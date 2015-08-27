@@ -18,8 +18,10 @@ app.post('/hs/card/', function(req, res) {
       res.status(200).send(result.body[0].img)
     });
 })
+
 app.get('/hs/card/:cardname', function(req, res) {
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/" + cardname)
+    var card = req.params.cardname
+    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/" + card)
     .header("X-Mashape-Key", "VwOpOqeoWymsh1bUg5rd8NJ4xvm7p1nYhEYjsnyWLceZPNEVeY")
     .header("Accept", "application/json")
     .end(function (result) {
