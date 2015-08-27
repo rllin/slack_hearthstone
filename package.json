@@ -1,0 +1,7 @@
+{
+    "dependencies": {
+        "express": "4.2.x",
+        "body-parser": "1.x.x",
+        "unirest": "x.x.x"
+    }
+}
