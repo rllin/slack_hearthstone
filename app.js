@@ -26,7 +26,7 @@ app.get('/hs/card/:cardname', function(req, res) {
     .header("Accept", "application/json")
     .end(function (result) {
       console.log(result.body[0].img)
-      res.status(200).send(result.body[0].img)
+      res.redirect(result.body[0].img)
     });
 })
 
