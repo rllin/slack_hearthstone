@@ -25,8 +25,12 @@ app.get('/hs/card/:cardname', function(req, res) {
     .header("X-Mashape-Key", "VwOpOqeoWymsh1bUg5rd8NJ4xvm7p1nYhEYjsnyWLceZPNEVeY")
     .header("Accept", "application/json")
     .end(function (result) {
-      console.log(result.body[0].img)
-      res.redirect(result.body[0].img)
+      try {
+          res.redirect(result.body[0].img)
+      }
+      catch (e) {
+          res.status(200).send('Could not find card name')
+      }
     });
 })
 
